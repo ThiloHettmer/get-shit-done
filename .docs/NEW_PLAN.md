@@ -63,7 +63,6 @@ ${plan.autonomous === false ? extractSection('references/checkpoints.md', 'check
 
 **Token Savings:** 8-12k per phase (p0-a1 target becomes real)  
 **Timeline:** 3-5 days implementation  
-**Backwards Compatible:** Yes (fallback to full file if section not found)
 
 ---
 
@@ -321,7 +320,9 @@ Abandon `@` syntax completely. Orchestrator builds entire prompt programmaticall
    - Make the `{if}` blocks actually work
    - **Savings:** Enables all conditional strategies
 
-**Phase 1 Total Savings:** 25-35k per phase
+**Phase 1 Total Savings:** 25-35k per phase  
+**As % of phase execution:** 0.15-0.35% reduction (phase uses 10-20M tokens)  
+**But across 20 phases:** 500-700k total reduction
 
 ---
 
@@ -343,7 +344,8 @@ Abandon `@` syntax completely. Orchestrator builds entire prompt programmaticall
    - Extract protocol sections on-demand
    - Combine with file splitting from Phase 1
 
-**Phase 2 Additional Savings:** 10-15k per phase
+**Phase 2 Additional Savings:** 10-15k per phase  
+**Cumulative with Phase 1:** 35-50k per phase (0.25-0.5% reduction)
 
 ---
 
@@ -366,29 +368,53 @@ Abandon `@` syntax completely. Orchestrator builds entire prompt programmaticall
    - Verify all protocols load correctly
    - Test edge cases
 
-**Phase 3 Additional Savings:** 20-30k per phase
+**Phase 3 Additional Savings:** 20-30k per phase  
+**Cumulative total:** 55-80k per phase (0.4-0.8% reduction)  
+**Over full project:** 1.1-1.6M tokens saved
 
 ---
 
 ## Total Realistic Savings
 
-### Conservative Estimate
-- Phase 1: 25k per phase
-- Phase 2: 10k per phase
-- Phase 3: 20k per phase
-- **Total: 55k tokens per phase**
+### Real-World Context
 
-**Over 20 phases:** 1.1M tokens saved  
-**Cost impact:** ~$0.30 per project (at $0.27/1M tokens)
+**Actual token usage from production:**
+- Planning phase: **~25M tokens input** (24M cached on DeepSeek)
+- Phase 1 execution: **10-20M tokens input**
+- Single project: **~200-300M total tokens** (planning + all phases)
 
-### Optimistic Estimate
-- Phase 1: 35k per phase
-- Phase 2: 15k per phase
-- Phase 3: 30k per phase
-- **Total: 80k tokens per phase**
+**Current optimization targets:**
+- Per execution phase: 55-80k tokens saved
+- This is **0.5-0.8%** of phase execution tokens
+- But multiplied across 20 phases = **1.1-1.6M tokens**
+- That's **~1% of total project cost**
 
-**Over 20 phases:** 1.6M tokens saved  
-**Cost impact:** ~$0.43 per project
+### Conservative Estimate (Per Project)
+- Phase 1 quick wins: 25k × 20 phases = **500k tokens**
+- Phase 2 section loading: 10k × 20 phases = **200k tokens**
+- Phase 3 lazy loading: 20k × 20 phases = **400k tokens**
+- **Total: 1.1M tokens saved**
+
+**Cost impact:** $0.30 per project (at $0.27/1M tokens)  
+**Percentage reduction:** ~0.5-1% of total project tokens
+
+### Optimistic Estimate (Per Project)
+- Phase 1 quick wins: 35k × 20 phases = **700k tokens**
+- Phase 2 section loading: 15k × 20 phases = **300k tokens**
+- Phase 3 lazy loading: 30k × 20 phases = **600k tokens**
+- **Total: 1.6M tokens saved**
+
+**Cost impact:** $0.43 per project (at $0.27/1M tokens)  
+**Percentage reduction:** ~0.8-1.5% of total project tokens
+
+### Reality Check
+
+The savings are **modest in percentage terms** but meaningful when:
+- Running dozens of projects
+- Using expensive models (Claude Opus vs DeepSeek)
+- Every optimization compounds
+
+**The real win:** Better than 0% improvement (current status)
 
 ---
 
@@ -455,6 +481,21 @@ Don't jump to Option 6 (Inline-Only Prompts) without trying simpler options firs
 - Phases can be implemented **incrementally**
 - Success is validated by **actual usage metrics**
 - The goal is **real savings, not theoretical projections**
+
+### Important Context
+
+**Real-world scale from production usage:**
+- Planning: 25M tokens (24M cached on DeepSeek)
+- Phase execution: 10-20M tokens per phase
+- Full project: 200-300M tokens total
+
+**These optimizations provide:**
+- Modest percentage gains (0.5-1.5% per project)
+- But meaningful absolute savings (1.1-1.6M tokens)
+- Compound effect across multiple projects
+- Better than current 0% improvement
+
+**The honest assessment:** This isn't revolutionary, but it's better than vaporware documentation.
 
 ---
 
