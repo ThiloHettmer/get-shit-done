@@ -61,13 +61,13 @@ ls "$PHASE_DIR"/*-PLAN.md 2>/dev/null
 ls "$PHASE_DIR"/*-SUMMARY.md 2>/dev/null
 
 # Phase goal from ROADMAP
-grep -A 5 "Phase ${PHASE_NUM}" .planning/ROADMAP.md
+grep -A 5 "Phase ${PHASE_NUM}" .planning/ROADMAP-CURRENT.md
 
 # Requirements mapped to this phase
 grep -E "^| ${PHASE_NUM}" .planning/REQUIREMENTS.md 2>/dev/null
 ```
 
-Extract phase goal from ROADMAP.md. This is the outcome to verify, not the tasks.
+Extract phase goal from ROADMAP-CURRENT.md. This is the outcome to verify, not the tasks.
 
 ## Step 2: Establish Must-Haves (Initial Mode Only)
 
@@ -101,7 +101,7 @@ must_haves:
 
 If no must_haves in frontmatter, derive using goal-backward process:
 
-1. **State the goal:** Take phase goal from ROADMAP.md
+1. **State the goal:** Take phase goal from ROADMAP-CURRENT.md
 
 2. **Derive truths:** Ask "What must be TRUE for this goal to be achieved?"
 
@@ -570,7 +570,7 @@ human_verification: # Only include if status: human_needed
 
 # Phase {X}: {Name} Verification Report
 
-**Phase Goal:** {goal from ROADMAP.md}
+**Phase Goal:** {goal from ROADMAP-CURRENT.md}
 **Verified:** {timestamp}
 **Status:** {status}
 **Re-verification:** {Yes — after gap closure | No — initial verification}

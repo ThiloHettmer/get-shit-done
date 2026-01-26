@@ -16,7 +16,7 @@ Template for spawning gsd-planner agent. The agent contains all planning experti
 @.planning/STATE.md
 
 **Roadmap:**
-@.planning/ROADMAP.md
+@.planning/ROADMAP-CURRENT.md
 
 **Requirements (if exists):**
 @.planning/REQUIREMENTS.md

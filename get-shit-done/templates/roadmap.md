@@ -113,6 +113,14 @@ Phases execute in numeric order: 2 → 2.1 → 2.2 → 3 → 3.1 → 4
 - Progress table updated by execute workflow
 - Plan count can be "TBD" initially, refined during planning
 
+**Pruned roadmap context (token optimization):**
+- Full ROADMAP.md contains all phases with complete details
+- ROADMAP-CURRENT.md is auto-generated pruned view (current + adjacent phases only)
+- Agents (planner, executor, verifier) load ROADMAP-CURRENT.md (600-1,000 tokens)
+- Orchestrators and commands load full ROADMAP.md (source of truth)
+- Pruned version regenerated after each plan completion and phase transition
+- Saves 700-4,000 tokens per phase execution depending on project size
+
 **Success criteria:**
 - 2-5 observable behaviors per phase (from user's perspective)
 - Cross-checked against requirements during roadmap creation

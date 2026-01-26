@@ -413,7 +413,7 @@ Output: [What artifacts will be created]
 
 <context>
 @.planning/PROJECT.md
-@.planning/ROADMAP.md
+@.planning/ROADMAP-CURRENT.md
 @.planning/STATE.md
 
 # Only reference prior plan SUMMARYs if genuinely needed
@@ -1040,7 +1040,7 @@ If exists, load relevant documents based on phase type:
 Check roadmap and existing phases:
 
 ```bash
-cat .planning/ROADMAP.md
+cat .planning/ROADMAP-CURRENT.md
 ls .planning/phases/
 ```
 
