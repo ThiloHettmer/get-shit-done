@@ -7,7 +7,7 @@
 
 ## Purpose
 
-This skill guides you through implementing token reduction refactoring tasks from `.docs/refactoring/`. It follows a structured workflow: read summary → research → create subtasks → implement → validate.
+This skill autonomously implements token reduction refactoring tasks from `.docs/refactoring/`. It follows a structured workflow: read summary → research → create subtasks → implement → validate. The agent proceeds through all phases automatically, reporting progress but not waiting for user approval.
 
 ---
 
@@ -22,6 +22,8 @@ Use when the user asks to:
 ---
 
 ## Workflow
+
+**Note:** This workflow executes autonomously. Progress is reported at each phase, but the agent proceeds without waiting for user approval.
 
 ### Phase 1: Read & Understand (5-10 minutes)
 
@@ -43,7 +45,7 @@ cat "${TASK_DIR}/SUMMARY.md"
 - Affected files list
 - Dependencies on other tasks
 
-**3. Present summary to user:**
+**3. Present summary to user and proceed:**
 ```markdown
 ## Task: [Task Name]
 **Priority:** [P0/P1/P2/P3] | **Category:** [Category] | **Risk:** [Low/Medium/High]
@@ -56,7 +58,7 @@ cat "${TASK_DIR}/SUMMARY.md"
 **Files to Modify:** [N] files
 **Dependencies:** [List or "None"]
 
-Ready to proceed? I'll research the current implementation next.
+Proceeding to research phase...
 ```
 
 ---
@@ -135,7 +137,7 @@ Based on "Implementation Requirements" section, create 5-15 subtasks following t
 - Integration after core changes
 - Validation last
 
-**3. Present to user for approval:**
+**3. Present subtasks and proceed:**
 ```markdown
 ## Subtasks Created
 
@@ -146,7 +148,7 @@ I've broken this down into [N] subtasks:
 **Integration ([Y] tasks):** Wire everything together
 **Validation ([Z] tasks):** Verify success
 
-Would you like me to proceed with implementation, or would you like to review/adjust the subtasks?
+Beginning implementation...
 ```
 
 ---
@@ -190,8 +192,9 @@ Would you like me to proceed with implementation, or would you like to review/ad
 - Make changes incrementally (one subtask at a time)
 - Test after each significant change
 - Don't skip subtasks
-- If a subtask fails, diagnose before proceeding
-- Keep user informed of progress
+- If a subtask fails, diagnose and adapt approach automatically
+- Keep user informed of progress (but continue working)
+- Proceed through all subtasks without waiting for approval
 
 ---
 
@@ -310,11 +313,9 @@ Mark task as complete in `.docs/refactoring/README.md`:
 
 **Action:**
 1. Document discrepancy clearly
-2. Present options to user:
-   - Adjust approach to match reality
-   - Update SUMMARY.md to reflect reality
-   - Abort and reassess task
-3. Wait for user decision before proceeding
+2. Automatically adjust approach to match reality
+3. Note the discrepancy in completion report
+4. Proceed with adapted implementation
 
 ### If Subtask Fails
 
@@ -322,12 +323,12 @@ Mark task as complete in `.docs/refactoring/README.md`:
 
 **Action:**
 1. Diagnose the issue
-2. Report to user with details
-3. Suggest alternatives:
-   - Modify approach for this subtask
-   - Skip and mark as follow-up
-   - Abort and rollback
-4. Wait for user decision
+2. Report the problem with details
+3. Automatically try alternative approaches:
+   - First: Modify approach for this subtask
+   - If that fails: Skip and mark as follow-up in completion report
+   - If critical: Note the blocker and continue with other subtasks
+4. Proceed to next subtask
 
 ### If Validation Fails
 
@@ -336,11 +337,9 @@ Mark task as complete in `.docs/refactoring/README.md`:
 **Action:**
 1. Identify which criteria failed
 2. Analyze why (implementation issue or unrealistic expectation)
-3. Present to user:
-   - What failed
-   - Why it failed
-   - Options (fix, accept partial, rollback)
-4. Wait for user decision
+3. Automatically attempt to fix implementation issues
+4. If some criteria cannot be met, document as partial completion
+5. Report final status with explanation of what was/wasn't achieved
 
 ### If Dependencies Missing
 
@@ -348,8 +347,9 @@ Mark task as complete in `.docs/refactoring/README.md`:
 
 **Action:**
 1. Report missing dependencies
-2. Suggest: implement dependency first or skip for now
-3. Wait for user decision
+2. Automatically assess if task can proceed with workarounds
+3. If possible: implement with notes about dependencies in completion report
+4. If blocked: document blocker and proceed with non-dependent parts
 
 ---
 
@@ -359,11 +359,13 @@ Mark task as complete in `.docs/refactoring/README.md`:
 - ✅ Read SUMMARY.md thoroughly before starting
 - ✅ Break work into small, testable subtasks
 - ✅ Validate after each significant change
-- ✅ Keep user informed of progress
+- ✅ Keep user informed of progress (but don't wait for approval)
 - ✅ Document everything clearly
 - ✅ Measure token savings accurately
 - ✅ Check backwards compatibility
 - ✅ Update all references when moving/renaming
+- ✅ Make reasonable autonomous decisions when issues arise
+- ✅ Proceed through all phases without stopping
 
 ### DON'T:
 - ❌ Skip the research phase
@@ -373,6 +375,8 @@ Mark task as complete in `.docs/refactoring/README.md`:
 - ❌ Assume token savings without measuring
 - ❌ Leave broken references
 - ❌ Forget to update documentation
+- ❌ Wait for user approval between phases
+- ❌ Stop work when encountering minor issues
 
 ---
 
@@ -388,12 +392,12 @@ Loading task summary...
 
 [Presents task overview from Phase 1]
 
-Ready to begin research phase. This will take ~10 minutes to examine:
+Beginning research phase to examine:
 - 18 template files
 - 3 agent files (executor, planner, verifier)
 - 2 workflow files
 
-Shall I proceed?
+This will take ~10 minutes...
 ```
 
 ---
@@ -411,13 +415,12 @@ Shall I proceed?
 
 A task is considered successfully completed when:
 
-1. ✅ All success criteria from SUMMARY.md are met
+1. ✅ All success criteria from SUMMARY.md are met (or documented as partial)
 2. ✅ Token savings achieved (within -20% to +50% of estimate)
 3. ✅ No regressions in existing functionality
 4. ✅ All tests pass (or no new failures)
 5. ✅ Documentation updated appropriately
 6. ✅ Completion report created in task directory
-7. ✅ User approves the implementation
 
 ---
 
@@ -431,15 +434,15 @@ A task is considered successfully completed when:
 
 ---
 
-## User Interaction Points
+## Progress Reporting
 
-You should prompt the user for input at these points:
+You should inform the user at these points (without waiting for approval):
 
-1. **After Phase 1 (Read):** Confirm understanding and get approval to research
-2. **After Phase 2 (Research):** Present findings, especially if issues found
-3. **After Phase 3 (Subtasks):** Review subtask plan before implementation
-4. **During Phase 4 (Implementation):** If subtask fails or unexpected issue
-5. **After Phase 5 (Validation):** Present results and get approval for completion
+1. **After Phase 1 (Read):** Present task overview and proceed to research
+2. **After Phase 2 (Research):** Present findings and proceed to subtask creation
+3. **After Phase 3 (Subtasks):** Show subtask breakdown and begin implementation
+4. **During Phase 4 (Implementation):** Report progress on each subtask
+5. **After Phase 5 (Validation):** Present final results and completion status
 
 ---
 
