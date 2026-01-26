@@ -2,16 +2,16 @@
 
 Template for `.planning/ROADMAP.md`.
 
-## Initial Roadmap (v1.0 Greenfield)
+## initial-roadmap
 
 ```markdown
 # Roadmap: [Project Name]
 
-## Overview
+## overview
 
 [One paragraph describing the journey from start to finish]
 
-## Phases
+## phases
 
 **Phase Numbering:**
 - Integer phases (1, 2, 3): Planned milestone work
@@ -24,7 +24,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [ ] **Phase 3: [Name]** - [One-line description]
 - [ ] **Phase 4: [Name]** - [One-line description]
 
-## Phase Details
+## phase-details
 
 ### Phase 1: [Name]
 **Goal**: [What this phase delivers]
@@ -90,7 +90,7 @@ Plans:
 Plans:
 - [ ] 04-01: [Brief description]
 
-## Progress
+## progress
 
 **Execution Order:**
 Phases execute in numeric order: 2 → 2.1 → 2.2 → 3 → 3.1 → 4
@@ -133,20 +133,20 @@ Phases execute in numeric order: 2 → 2.1 → 2.2 → 3 → 3.1 → 4
 - `Deferred` - Pushed to later (with reason)
 </status_values>
 
-## Milestone-Grouped Roadmap (After v1.0 Ships)
+## milestone-grouped-roadmap
 
 After completing first milestone, reorganize with milestone groupings:
 
 ```markdown
 # Roadmap: [Project Name]
 
-## Milestones
+## milestones
 
 - ✅ **v1.0 MVP** - Phases 1-4 (shipped YYYY-MM-DD)
 - 🚧 **v1.1 [Name]** - Phases 5-6 (in progress)
 - 📋 **v2.0 [Name]** - Phases 7-10 (planned)
 
-## Phases
+## phases
 
 <details>
 <summary>✅ v1.0 MVP (Phases 1-4) - SHIPPED YYYY-MM-DD</summary>
@@ -185,7 +185,7 @@ Plans:
 
 [... v2.0 phases ...]
 
-## Progress
+## progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|

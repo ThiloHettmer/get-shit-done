@@ -408,7 +408,7 @@ Output: [What artifacts will be created]
 
 <execution_context>
 @~/.claude/get-shit-done/workflows/execute-plan.md
-@~/.claude/get-shit-done/templates/summary.md
+@~/.claude/get-shit-done/templates/summary.md#frontmatter-guidance
 </execution_context>
 
 <context>

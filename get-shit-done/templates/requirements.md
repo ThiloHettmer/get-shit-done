@@ -41,7 +41,7 @@ Deferred to future release. Tracked but not in current roadmap.
 - **[CAT]-01**: [Requirement description]
 - **[CAT]-02**: [Requirement description]
 
-## Out of Scope
+## out-of-scope
 
 Explicitly excluded. Documented to prevent scope creep.
 
@@ -50,7 +50,7 @@ Explicitly excluded. Documented to prevent scope creep.
 | [Feature] | [Why excluded] |
 | [Feature] | [Why excluded] |
 
-## Traceability
+## traceability
 
 Which phases cover which requirements. Updated during roadmap creation.
 
@@ -186,7 +186,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 - **MODR-04**: Admin can remove content
 - **MODR-05**: Admin can ban users
 
-## Out of Scope
+## out-of-scope
 
 | Feature | Reason |
 |---------|--------|
@@ -195,7 +195,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | OAuth login | Email/password sufficient for v1 |
 | Mobile app | Web-first, mobile later |
 
-## Traceability
+## traceability
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|

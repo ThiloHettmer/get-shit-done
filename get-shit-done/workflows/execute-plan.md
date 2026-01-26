@@ -7,6 +7,12 @@ Read STATE.md before any operation to load project context.
 Read config.json for planning behavior settings.
 
 @~/.claude/get-shit-done/references/git-integration.md
+
+**Note:** Additional references (checkpoints.md, tdd.md) are conditionally loaded by the execute-phase orchestrator based on plan metadata:
+- checkpoints.md: Only if plan.autonomous === false
+- tdd.md: Only if plan.type === 'tdd'
+
+This context-aware loading reduces token usage by ~70% for standard autonomous plans.
 </required_reading>
 
 <process>

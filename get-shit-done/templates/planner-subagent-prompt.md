@@ -4,7 +4,7 @@ Template for spawning gsd-planner agent. The agent contains all planning experti
 
 ---
 
-## Template
+## template
 
 ```markdown
 <planning_context>
@@ -55,7 +55,7 @@ Before returning PLANNING COMPLETE:
 
 ---
 
-## Placeholders
+## placeholders
 
 | Placeholder | Source | Example |
 |-------------|--------|---------|
@@ -66,7 +66,7 @@ Before returning PLANNING COMPLETE:
 
 ---
 
-## Usage
+## usage
 
 **From /gsd:plan-phase (standard mode):**
 ```python
@@ -88,7 +88,7 @@ Task(
 
 ---
 
-## Continuation
+## continuation
 
 For checkpoints, spawn fresh agent with:
 

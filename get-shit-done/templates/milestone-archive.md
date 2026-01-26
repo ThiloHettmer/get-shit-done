@@ -4,7 +4,7 @@ This template is used by the complete-milestone workflow to create archive files
 
 ---
 
-## File Template
+## file-template
 
 # Milestone v{{VERSION}}: {{MILESTONE_NAME}}
 
@@ -12,11 +12,11 @@ This template is used by the complete-milestone workflow to create archive files
 **Phases:** {{PHASE_START}}-{{PHASE_END}}
 **Total Plans:** {{TOTAL_PLANS}}
 
-## Overview
+## overview
 
 {{MILESTONE_DESCRIPTION}}
 
-## Phases
+## phases
 
 {{PHASES_SECTION}}
 
@@ -54,7 +54,7 @@ Plans:
 
 ---
 
-## Milestone Summary
+## milestone-summary
 
 **Decimal Phases:**
 
@@ -93,7 +93,7 @@ _For current project status, see .planning/ROADMAP.md_
 
 ---
 
-## Usage Guidelines
+## usage-guidelines
 
 <guidelines>
 **When to create milestone archives:**

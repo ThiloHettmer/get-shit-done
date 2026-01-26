@@ -4,7 +4,7 @@ Template for `.planning/phases/XX-name/{phase}-{plan}-SUMMARY.md` - phase comple
 
 ---
 
-## File Template
+## file-template
 
 ```markdown
 ---
@@ -47,7 +47,7 @@ completed: YYYY-MM-DD
 
 **[Substantive one-liner describing outcome - NOT "phase complete" or "implementation finished"]**
 
-## Performance
+## performance
 
 - **Duration:** [time] (e.g., 23 min, 1h 15m)
 - **Started:** [ISO timestamp]
@@ -55,12 +55,12 @@ completed: YYYY-MM-DD
 - **Tasks:** [count completed]
 - **Files modified:** [count]
 
-## Accomplishments
+## accomplishments
 - [Most important outcome]
 - [Second key accomplishment]
 - [Third if applicable]
 
-## Task Commits
+## task-commits
 
 Each task was committed atomically:
 
@@ -72,14 +72,14 @@ Each task was committed atomically:
 
 _Note: TDD tasks may have multiple commits (test → feat → refactor)_
 
-## Files Created/Modified
+## files-created-modified
 - `path/to/file.ts` - What it does
 - `path/to/another.ts` - What it does
 
-## Decisions Made
+## decisions-made
 [Key decisions with brief rationale, or "None - followed plan as specified"]
 
-## Deviations from Plan
+## deviations-from-plan
 
 [If no deviations: "None - plan executed exactly as written"]
 
@@ -102,12 +102,12 @@ _Note: TDD tasks may have multiple commits (test → feat → refactor)_
 **Total deviations:** [N] auto-fixed ([breakdown by rule])
 **Impact on plan:** [Brief assessment - e.g., "All auto-fixes necessary for correctness/security. No scope creep."]
 
-## Issues Encountered
+## issues-encountered
 [Problems and how they were resolved, or "None"]
 
 [Note: "Deviations from Plan" documents unplanned work that was handled automatically via deviation rules. "Issues Encountered" documents problems during planned work that required problem-solving.]
 
-## User Setup Required
+## user-setup-required
 
 [If USER-SETUP.md was generated:]
 **External services require manual configuration.** See [{phase}-USER-SETUP.md](./{phase}-USER-SETUP.md) for:
@@ -118,7 +118,7 @@ _Note: TDD tasks may have multiple commits (test → feat → refactor)_
 [If no USER-SETUP.md:]
 None - no external service configuration required.
 
-## Next Phase Readiness
+## next-phase-readiness
 [What's ready for next phase]
 [Any blockers or concerns]
 
@@ -127,7 +127,7 @@ None - no external service configuration required.
 *Completed: [date]*
 ```
 
-<frontmatter_guidance>
+## frontmatter-guidance
 **Purpose:** Enable automatic context assembly via dependency graph. Frontmatter makes summary metadata machine-readable so plan-phase can scan all summaries quickly and select relevant ones based on dependencies.
 
 **Fast scanning:** Frontmatter is first ~25 lines, cheap to scan across all summaries without reading full content.
@@ -143,9 +143,8 @@ None - no external service configuration required.
 **Patterns:** Established conventions future phases should maintain.
 
 **Population:** Frontmatter is populated during summary creation in execute-plan.md. See `<step name="create_summary">` for field-by-field guidance.
-</frontmatter_guidance>
 
-<one_liner_rules>
+## one-liner-rules
 The one-liner MUST be substantive:
 
 **Good:**
@@ -160,15 +159,14 @@ The one-liner MUST be substantive:
 - "All tasks done"
 
 The one-liner should tell someone what actually shipped.
-</one_liner_rules>
 
-<example>
+## example
 ```markdown
 # Phase 1: Foundation Summary
 
 **JWT auth with refresh rotation using jose library, Prisma User model, and protected API middleware**
 
-## Performance
+## performance
 
 - **Duration:** 28 min
 - **Started:** 2025-01-15T14:22:10Z
@@ -176,25 +174,25 @@ The one-liner should tell someone what actually shipped.
 - **Tasks:** 5
 - **Files modified:** 8
 
-## Accomplishments
+## accomplishments
 - User model with email/password auth
 - Login/logout endpoints with httpOnly JWT cookies
 - Protected route middleware checking token validity
 - Refresh token rotation on each request
 
-## Files Created/Modified
+## files-created-modified
 - `prisma/schema.prisma` - User and Session models
 - `src/app/api/auth/login/route.ts` - Login endpoint
 - `src/app/api/auth/logout/route.ts` - Logout endpoint
 - `src/middleware.ts` - Protected route checks
 - `src/lib/auth.ts` - JWT helpers using jose
 
-## Decisions Made
+## decisions-made
 - Used jose instead of jsonwebtoken (ESM-native, Edge-compatible)
 - 15-min access tokens with 7-day refresh tokens
 - Storing refresh tokens in database for revocation capability
 
-## Deviations from Plan
+## deviations-from-plan
 
 ### Auto-fixed Issues
 
@@ -219,10 +217,10 @@ The one-liner should tell someone what actually shipped.
 **Total deviations:** 2 auto-fixed (1 missing critical, 1 blocking)
 **Impact on plan:** Both auto-fixes essential for security and functionality. No scope creep.
 
-## Issues Encountered
+## issues-encountered
 - jsonwebtoken CommonJS import failed in Edge runtime - switched to jose (planned library change, worked as expected)
 
-## Next Phase Readiness
+## next-phase-readiness
 - Auth foundation complete, ready for feature development
 - User registration endpoint needed before public launch
 
@@ -230,9 +228,8 @@ The one-liner should tell someone what actually shipped.
 *Phase: 01-foundation*
 *Completed: 2025-01-15*
 ```
-</example>
 
-<guidelines>
+## guidelines
 **Frontmatter:** MANDATORY - complete all fields. Enables automatic context assembly for future planning.
 
 **One-liner:** Must be substantive. "JWT auth with refresh rotation using jose library" not "Authentication implemented".
@@ -243,4 +240,3 @@ The one-liner should tell someone what actually shipped.
 - Use "None - followed plan as specified" if no deviations
 
 **After creation:** STATE.md updated with position, decisions, issues.
-</guidelines>

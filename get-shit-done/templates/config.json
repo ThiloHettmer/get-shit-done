@@ -31,5 +31,42 @@
   "safety": {
     "always_confirm_destructive": true,
     "always_confirm_external_services": true
+  },
+  "section_loading": {
+    "enabled": true,
+    "syntax": "@template.md#section-name",
+    "description": "Templates support section-based loading for token efficiency",
+    "examples": {
+      "full_template": "@~/.claude/get-shit-done/templates/summary.md",
+      "specific_section": "@~/.claude/get-shit-done/templates/summary.md#frontmatter-guidance",
+      "multiple_sections": [
+        "@~/.claude/get-shit-done/templates/summary.md#file-template",
+        "@~/.claude/get-shit-done/templates/summary.md#example"
+      ]
+    },
+    "naming_convention": {
+      "format": "lowercase-hyphen",
+      "rules": [
+        "All lowercase letters",
+        "Spaces replaced with hyphens",
+        "No special characters",
+        "Descriptive and clear"
+      ]
+    },
+    "common_sections": {
+      "template_structure": ["file-template", "frontmatter-guidance", "guidelines", "example"],
+      "content_sections": ["overview", "summary", "context", "requirements", "verification"],
+      "guidance_sections": ["anti-patterns", "common-pitfalls", "dont-hand-roll"]
+    },
+    "token_savings": {
+      "full_template_avg": "2000-2500 tokens",
+      "section_load_avg": "700-900 tokens",
+      "reduction": "60-70%",
+      "phase_savings": "8-12k tokens"
+    },
+    "fallback": {
+      "behavior": "load_full_template",
+      "description": "If section not found, loads full template for backwards compatibility"
+    }
   }
 }

@@ -9,7 +9,7 @@ Template for `.planning/phases/XX-name/{phase}-{plan}-PLAN.md` - executable phas
 
 ---
 
-## File Template
+## file-template
 
 ```markdown
 ---
@@ -118,7 +118,7 @@ After completion, create `.planning/phases/XX-name/{phase}-{plan}-SUMMARY.md`
 
 ---
 
-## Frontmatter Fields
+## frontmatter-fields
 
 | Field | Required | Purpose |
 |-------|----------|---------|
@@ -138,7 +138,7 @@ After completion, create `.planning/phases/XX-name/{phase}-{plan}-SUMMARY.md`
 
 ---
 
-## Parallel vs Sequential
+## parallel-vs-sequential
 
 <parallel_examples>
 
@@ -200,7 +200,7 @@ Wave 3 runs after Waves 1 and 2. Pauses at checkpoint, orchestrator presents to 
 
 ---
 
-## Context Section
+## context-section
 
 **Parallel-aware context:**
 
@@ -232,7 +232,7 @@ Wave 3 runs after Waves 1 and 2. Pauses at checkpoint, orchestrator presents to 
 
 ---
 
-## Scope Guidance
+## scope-guidance
 
 **Plan sizing:**
 
@@ -260,7 +260,7 @@ AVOID:  Plan 01 = All models
 
 ---
 
-## TDD Plans
+## tdd-plans
 
 TDD features get dedicated plans with `type: tdd`.
 
@@ -272,7 +272,7 @@ See `~/.claude/get-shit-done/references/tdd.md` for TDD plan structure.
 
 ---
 
-## Task Types
+## task-types
 
 | Type | Use For | Autonomy |
 |------|---------|----------|
@@ -290,7 +290,7 @@ See `~/.claude/get-shit-done/references/tdd.md` for TDD plan structure.
 
 ---
 
-## Examples
+## examples
 
 **Autonomous parallel plan:**
 
@@ -424,7 +424,7 @@ After completion, create `.planning/phases/03-features/03-03-SUMMARY.md`
 
 ---
 
-## Anti-Patterns
+## anti-patterns
 
 **Bad: Reflexive dependency chaining**
 ```yaml
@@ -456,7 +456,7 @@ files_modified: [...]
 
 ---
 
-## Guidelines
+## guidelines
 
 - Always use XML structure for Claude parsing
 - Include `wave`, `depends_on`, `files_modified`, `autonomous` in every plan
@@ -467,7 +467,7 @@ files_modified: [...]
 
 ---
 
-## User Setup (External Services)
+## user-setup
 
 When a plan introduces external services requiring human configuration, declare in frontmatter:
 
@@ -501,7 +501,7 @@ See `~/.claude/get-shit-done/templates/user-setup.md` for full schema and exampl
 
 ---
 
-## Must-Haves (Goal-Backward Verification)
+## must-haves
 
 The `must_haves` field defines what must be TRUE for the phase goal to be achieved. Derived during planning, verified after execution.
 

@@ -4,7 +4,7 @@ Template for `.planning/debug/[slug].md` — active debug session tracking.
 
 ---
 
-## File Template
+## file-template
 
 ```markdown
 ---
@@ -14,7 +14,7 @@ created: [ISO timestamp]
 updated: [ISO timestamp]
 ---
 
-## Current Focus
+## current-focus
 <!-- OVERWRITE on each update - always reflects NOW -->
 
 hypothesis: [current theory being tested]
@@ -22,7 +22,7 @@ test: [how testing it]
 expecting: [what result means if true/false]
 next_action: [immediate next step]
 
-## Symptoms
+## symptoms
 <!-- Written during gathering, then immutable -->
 
 expected: [what should happen]
@@ -31,14 +31,14 @@ errors: [error messages if any]
 reproduction: [how to trigger]
 started: [when it broke / always broken]
 
-## Eliminated
+## eliminated
 <!-- APPEND only - prevents re-investigating after /clear -->
 
 - hypothesis: [theory that was wrong]
   evidence: [what disproved it]
   timestamp: [when eliminated]
 
-## Evidence
+## evidence
 <!-- APPEND only - facts discovered during investigation -->
 
 - timestamp: [when found]
@@ -46,7 +46,7 @@ started: [when it broke / always broken]
   found: [what was observed]
   implication: [what this means]
 
-## Resolution
+## resolution
 <!-- OVERWRITE as understanding evolves -->
 
 root_cause: [empty until found]

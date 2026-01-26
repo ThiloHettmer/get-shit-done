@@ -6,7 +6,7 @@ Template for `.planning/phases/XX-name/{phase}-USER-SETUP.md` - human-required c
 
 ---
 
-## File Template
+## file-template
 
 ```markdown
 # Phase {X}: User Setup Required
@@ -17,14 +17,14 @@ Template for `.planning/phases/XX-name/{phase}-USER-SETUP.md` - human-required c
 
 Complete these items for the integration to function. Claude automated everything possible; these items require human access to external dashboards/accounts.
 
-## Environment Variables
+## environment-variables
 
 | Status | Variable | Source | Add to |
 |--------|----------|--------|--------|
 | [ ] | `ENV_VAR_NAME` | [Service Dashboard → Path → To → Value] | `.env.local` |
 | [ ] | `ANOTHER_VAR` | [Service Dashboard → Path → To → Value] | `.env.local` |
 
-## Account Setup
+## account-setup
 
 [Only if new account creation is required]
 
@@ -32,7 +32,7 @@ Complete these items for the integration to function. Claude automated everythin
   - URL: [signup URL]
   - Skip if: Already have account
 
-## Dashboard Configuration
+## dashboard-configuration
 
 [Only if dashboard configuration is required]
 
@@ -41,7 +41,7 @@ Complete these items for the integration to function. Claude automated everythin
   - Set to: [Required value or configuration]
   - Notes: [Any important details]
 
-## Verification
+## verification
 
 After completing setup, verify with:
 
@@ -59,7 +59,7 @@ Expected results:
 
 ---
 
-## When to Generate
+## when-to-generate
 
 Generate `{phase}-USER-SETUP.md` when plan frontmatter contains `user_setup` field.
 
@@ -71,7 +71,7 @@ Generate `{phase}-USER-SETUP.md` when plan frontmatter contains `user_setup` fie
 
 ---
 
-## Frontmatter Schema
+## frontmatter-schema
 
 In PLAN.md, `user_setup` declares human-required configuration:
 
@@ -95,7 +95,7 @@ user_setup:
 
 ---
 
-## The Automation-First Rule
+## automation-first-rule
 
 **USER-SETUP.md contains ONLY what Claude literally cannot do.**
 
@@ -114,7 +114,7 @@ user_setup:
 
 ---
 
-## Service-Specific Examples
+## service-specific-examples
 
 <stripe_example>
 ```markdown
@@ -126,7 +126,7 @@ user_setup:
 
 Complete these items for Stripe integration to function.
 
-## Environment Variables
+## environment-variables
 
 | Status | Variable | Source | Add to |
 |--------|----------|--------|--------|
@@ -134,13 +134,13 @@ Complete these items for Stripe integration to function.
 | [ ] | `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Stripe Dashboard → Developers → API keys → Publishable key | `.env.local` |
 | [ ] | `STRIPE_WEBHOOK_SECRET` | Stripe Dashboard → Developers → Webhooks → [endpoint] → Signing secret | `.env.local` |
 
-## Account Setup
+## account-setup
 
 - [ ] **Create Stripe account** (if needed)
   - URL: https://dashboard.stripe.com/register
   - Skip if: Already have Stripe account
 
-## Dashboard Configuration
+## dashboard-configuration
 
 - [ ] **Create webhook endpoint**
   - Location: Stripe Dashboard → Developers → Webhooks → Add endpoint
@@ -158,7 +158,7 @@ Complete these items for Stripe integration to function.
     - `STRIPE_STARTER_PRICE_ID`
     - `STRIPE_PRO_PRICE_ID`
 
-## Local Development
+## local-development
 
 For local webhook testing:
 ```bash
@@ -166,7 +166,7 @@ stripe listen --forward-to localhost:3000/api/webhooks/stripe
 ```
 Use the webhook signing secret from CLI output (starts with `whsec_`).
 
-## Verification
+## verification
 
 After completing setup:
 
@@ -201,7 +201,7 @@ Expected: Build passes, webhook returns 400 (signature validation working).
 
 Complete these items for Supabase Auth to function.
 
-## Environment Variables
+## environment-variables
 
 | Status | Variable | Source | Add to |
 |--------|----------|--------|--------|
@@ -209,13 +209,13 @@ Complete these items for Supabase Auth to function.
 | [ ] | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase Dashboard → Settings → API → anon public | `.env.local` |
 | [ ] | `SUPABASE_SERVICE_ROLE_KEY` | Supabase Dashboard → Settings → API → service_role | `.env.local` |
 
-## Account Setup
+## account-setup
 
 - [ ] **Create Supabase project**
   - URL: https://supabase.com/dashboard/new
   - Skip if: Already have project for this app
 
-## Dashboard Configuration
+## dashboard-configuration
 
 - [ ] **Enable Email Auth**
   - Location: Supabase Dashboard → Authentication → Providers
@@ -227,7 +227,7 @@ Complete these items for Supabase Auth to function.
   - For Google: Add Client ID and Secret from Google Cloud Console
   - For GitHub: Add Client ID and Secret from GitHub OAuth Apps
 
-## Verification
+## verification
 
 After completing setup:
 
@@ -255,20 +255,20 @@ npx supabase status
 
 Complete these items for SendGrid email to function.
 
-## Environment Variables
+## environment-variables
 
 | Status | Variable | Source | Add to |
 |--------|----------|--------|--------|
 | [ ] | `SENDGRID_API_KEY` | SendGrid Dashboard → Settings → API Keys → Create API Key | `.env.local` |
 | [ ] | `SENDGRID_FROM_EMAIL` | Your verified sender email address | `.env.local` |
 
-## Account Setup
+## account-setup
 
 - [ ] **Create SendGrid account**
   - URL: https://signup.sendgrid.com/
   - Skip if: Already have account
 
-## Dashboard Configuration
+## dashboard-configuration
 
 - [ ] **Verify sender identity**
   - Location: SendGrid Dashboard → Settings → Sender Authentication
@@ -280,7 +280,7 @@ Complete these items for SendGrid email to function.
   - Permission: Restricted Access → Mail Send (Full Access)
   - Copy key immediately (shown only once)
 
-## Verification
+## verification
 
 After completing setup:
 
@@ -302,7 +302,7 @@ curl -X POST http://localhost:3000/api/test-email \
 
 ---
 
-## Guidelines
+## guidelines
 
 **Never include:** Actual secret values. Steps Claude can automate (package installs, code changes).
 

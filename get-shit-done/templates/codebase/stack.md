@@ -6,7 +6,7 @@ Template for `.planning/codebase/STACK.md` - captures the technology foundation.
 
 ---
 
-## File Template
+## file-template
 
 ```markdown
 # Technology Stack

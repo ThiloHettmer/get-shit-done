@@ -6,7 +6,7 @@ Template for `.planning/codebase/CONVENTIONS.md` - captures coding style and pat
 
 ---
 
-## File Template
+## file-template
 
 ```markdown
 # Coding Conventions

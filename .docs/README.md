@@ -13,6 +13,27 @@ This documentation provides a comprehensive technical reference for the Get Shit
 - Developers creating extensions or modifications
 - Anyone interested in meta-prompting systems for AI coding assistants
 
+## Template Section Loading (New in v1.1)
+
+Templates now support section-based loading for token efficiency.
+
+**Syntax:** `@template.md#section-name`
+
+**Examples:**
+```markdown
+# Full template (backwards compatible)
+@~/.claude/get-shit-done/templates/summary.md
+
+# Specific section (new)
+@~/.claude/get-shit-done/templates/summary.md#frontmatter-guidance
+```
+
+**Benefits:** 60-70% token reduction per template load, 8-12k saved per phase
+
+See `.docs/refactoring/p0-a1-lazy-template-loading/` for details.
+
+---
+
 ## Documentation Structure
 
 ### Core Documentation

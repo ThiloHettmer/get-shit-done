@@ -6,7 +6,7 @@ Template for `.planning/codebase/CONCERNS.md` - captures known issues and areas 
 
 ---
 
-## File Template
+## file-template
 
 ```markdown
 # Codebase Concerns

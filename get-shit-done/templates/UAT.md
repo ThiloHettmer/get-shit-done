@@ -4,7 +4,7 @@ Template for `.planning/phases/XX-name/{phase}-UAT.md` — persistent UAT sessio
 
 ---
 
-## File Template
+## file-template
 
 ```markdown
 ---
@@ -15,7 +15,7 @@ started: [ISO timestamp]
 updated: [ISO timestamp]
 ---
 
-## Current Test
+## current-test
 <!-- OVERWRITE each test - shows where we are -->
 
 number: [N]
@@ -24,7 +24,7 @@ expected: |
   [what user should observe]
 awaiting: user response
 
-## Tests
+## tests
 
 ### 1. [Test Name]
 expected: [observable behavior - what user should see]
@@ -47,7 +47,7 @@ reason: [why skipped]
 
 ...
 
-## Summary
+## summary
 
 total: [N]
 passed: [N]
@@ -55,7 +55,7 @@ issues: [N]
 pending: [N]
 skipped: [N]
 
-## Gaps
+## gaps
 
 <!-- YAML format for plan-phase --gaps consumption -->
 - truth: "[expected behavior from test]"
@@ -116,7 +116,7 @@ skipped: [N]
 
 **After diagnosis:**
 ```yaml
-## Gaps
+## gaps
 
 - truth: "Comment appears immediately after submission"
   status: failed
@@ -189,11 +189,11 @@ started: 2025-01-15T10:30:00Z
 updated: 2025-01-15T10:45:00Z
 ---
 
-## Current Test
+## current-test
 
 [testing complete]
 
-## Tests
+## tests
 
 ### 1. View Comments on Post
 expected: Comments section expands, shows count and comment list
@@ -221,7 +221,7 @@ result: pass
 expected: Post shows accurate count, increments when adding comment
 result: pass
 
-## Summary
+## summary
 
 total: 6
 passed: 5
@@ -229,7 +229,7 @@ issues: 1
 pending: 0
 skipped: 0
 
-## Gaps
+## gaps
 
 - truth: "Comment appears immediately after submission in list"
   status: failed

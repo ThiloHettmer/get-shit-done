@@ -7,17 +7,17 @@ Template for `.planning/PROJECT.md` — the living project context document.
 ```markdown
 # [Project Name]
 
-## What This Is
+## what-this-is
 
 [Current accurate description — 2-3 sentences. What does this product do and who is it for?
 Use the user's language and framing. Update whenever reality drifts from this description.]
 
-## Core Value
+## core-value
 
 [The ONE thing that matters most. If everything else fails, this must work.
 One sentence that drives prioritization when tradeoffs arise.]
 
-## Requirements
+## requirements
 
 ### Validated
 
@@ -40,7 +40,7 @@ One sentence that drives prioritization when tradeoffs arise.]
 - [Exclusion 1] — [why]
 - [Exclusion 2] — [why]
 
-## Context
+## context
 
 [Background information that informs implementation:
 - Technical environment or ecosystem
@@ -48,14 +48,14 @@ One sentence that drives prioritization when tradeoffs arise.]
 - User research or feedback themes
 - Known issues to address]
 
-## Constraints
+## constraints
 
 - **[Type]**: [What] — [Why]
 - **[Type]**: [What] — [Why]
 
 Common types: Tech stack, Timeline, Budget, Dependencies, Compatibility, Performance, Security
 
-## Key Decisions
+## key-decisions
 
 <!-- Decisions that constrain future work. Add throughout project lifecycle. -->
 
@@ -171,7 +171,7 @@ For existing codebases:
 STATE.md references PROJECT.md:
 
 ```markdown
-## Project Reference
+## project-reference
 
 See: .planning/PROJECT.md (updated [date])
 

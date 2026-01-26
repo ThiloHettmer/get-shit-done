@@ -4,7 +4,7 @@ Template for spawning gsd-debugger agent. The agent contains all debugging exper
 
 ---
 
-## Template
+## template
 
 ```markdown
 <objective>
@@ -33,7 +33,7 @@ Create: .planning/debug/{slug}.md
 
 ---
 
-## Placeholders
+## placeholders
 
 | Placeholder | Source | Example |
 |-------------|--------|---------|
@@ -49,7 +49,7 @@ Create: .planning/debug/{slug}.md
 
 ---
 
-## Usage
+## usage
 
 **From /gsd:debug:**
 ```python
@@ -67,7 +67,7 @@ Task(prompt=template, subagent_type="gsd-debugger", description="Debug UAT-001")
 
 ---
 
-## Continuation
+## continuation
 
 For checkpoints, spawn fresh agent with:
 

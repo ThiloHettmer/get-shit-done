@@ -6,7 +6,7 @@ Template for `.planning/codebase/STRUCTURE.md` - captures physical file organiza
 
 ---
 
-## File Template
+## file-template
 
 ```markdown
 # Codebase Structure

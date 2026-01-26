@@ -4,7 +4,7 @@ Template for `.planning/phases/XX-name/{phase}-VERIFICATION.md` — phase goal v
 
 ---
 
-## File Template
+## file-template
 
 ```markdown
 ---
@@ -20,7 +20,7 @@ score: N/M must-haves verified
 **Verified:** {timestamp}
 **Status:** {passed | gaps_found | human_needed}
 
-## Goal Achievement
+## goal-achievement
 
 ### Observable Truths
 
@@ -52,7 +52,7 @@ score: N/M must-haves verified
 
 **Wiring:** {N}/{M} connections verified
 
-## Requirements Coverage
+## requirements-coverage
 
 | Requirement | Status | Blocking Issue |
 |-------------|--------|----------------|
@@ -62,7 +62,7 @@ score: N/M must-haves verified
 
 **Coverage:** {N}/{M} requirements satisfied
 
-## Anti-Patterns Found
+## anti-patterns-found
 
 | File | Line | Pattern | Severity | Impact |
 |------|------|---------|----------|--------|
@@ -72,7 +72,7 @@ score: N/M must-haves verified
 
 **Anti-patterns:** {N} found ({blockers} blockers, {warnings} warnings)
 
-## Human Verification Required
+## human-verification-required
 
 {If no human verification needed:}
 None — all verifiable items checked programmatically.
@@ -89,7 +89,7 @@ None — all verifiable items checked programmatically.
 **Expected:** {What should happen}
 **Why human:** {Why can't verify programmatically}
 
-## Gaps Summary
+## gaps-summary
 
 {If no gaps:}
 **No gaps found.** Phase goal achieved. Ready to proceed.
@@ -115,7 +115,7 @@ None — all verifiable items checked programmatically.
    - Impact: {limited impact because...}
    - Recommendation: {fix now or defer}
 
-## Recommended Fix Plans
+## recommended-fix-plans
 
 {If gaps found, generate fix plan recommendations:}
 
@@ -144,7 +144,7 @@ None — all verifiable items checked programmatically.
 
 ---
 
-## Verification Metadata
+## verification-metadata
 
 **Verification approach:** Goal-backward (derived from phase goal)
 **Must-haves source:** {PLAN.md frontmatter | derived from ROADMAP.md goal}
@@ -159,7 +159,7 @@ None — all verifiable items checked programmatically.
 
 ---
 
-## Guidelines
+## guidelines
 
 **Status values:**
 - `passed` — All must-haves verified, no blockers
@@ -185,7 +185,7 @@ None — all verifiable items checked programmatically.
 
 ---
 
-## Example
+## example
 
 ```markdown
 ---
@@ -201,7 +201,7 @@ score: 2/5 must-haves verified
 **Verified:** 2025-01-15T14:30:00Z
 **Status:** gaps_found
 
-## Goal Achievement
+## goal-achievement
 
 ### Observable Truths
 
@@ -237,7 +237,7 @@ score: 2/5 must-haves verified
 
 **Wiring:** 0/4 connections verified
 
-## Requirements Coverage
+## requirements-coverage
 
 | Requirement | Status | Blocking Issue |
 |-------------|--------|----------------|
@@ -247,7 +247,7 @@ score: 2/5 must-haves verified
 
 **Coverage:** 0/3 requirements satisfied
 
-## Anti-Patterns Found
+## anti-patterns-found
 
 | File | Line | Pattern | Severity | Impact |
 |------|------|---------|----------|--------|
@@ -257,11 +257,11 @@ score: 2/5 must-haves verified
 
 **Anti-patterns:** 3 found (2 blockers, 1 warning)
 
-## Human Verification Required
+## human-verification-required
 
 None needed until automated gaps are fixed.
 
-## Gaps Summary
+## gaps-summary
 
 ### Critical Gaps (Block Progress)
 
@@ -280,7 +280,7 @@ None needed until automated gaps are fixed.
    - Impact: Even if API worked, UI wouldn't call it
    - Fix: Add useEffect fetch in Chat, onSubmit fetch in ChatInput
 
-## Recommended Fix Plans
+## recommended-fix-plans
 
 ### 03-04-PLAN.md: Implement Chat API
 
@@ -308,7 +308,7 @@ None needed until automated gaps are fixed.
 
 ---
 
-## Verification Metadata
+## verification-metadata
 
 **Verification approach:** Goal-backward (derived from phase goal)
 **Must-haves source:** 03-01-PLAN.md frontmatter

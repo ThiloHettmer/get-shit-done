@@ -6,7 +6,7 @@ Template for `.planning/phases/XX-name/{phase}-RESEARCH.md` - comprehensive ecos
 
 ---
 
-## File Template
+## file-template
 
 ```markdown
 # Phase [X]: [Name] - Research
@@ -16,7 +16,7 @@ Template for `.planning/phases/XX-name/{phase}-RESEARCH.md` - comprehensive ecos
 **Confidence:** [HIGH/MEDIUM/LOW]
 
 <research_summary>
-## Summary
+## summary
 
 [2-3 paragraph executive summary]
 - What was researched
@@ -27,7 +27,7 @@ Template for `.planning/phases/XX-name/{phase}-RESEARCH.md` - comprehensive ecos
 </research_summary>
 
 <standard_stack>
-## Standard Stack
+## standard-stack
 
 The established libraries/tools for this domain:
 
@@ -57,7 +57,7 @@ yarn add [packages]
 </standard_stack>
 
 <architecture_patterns>
-## Architecture Patterns
+## architecture-patterns
 
 ### Recommended Project Structure
 ```
@@ -89,7 +89,7 @@ src/
 </architecture_patterns>
 
 <dont_hand_roll>
-## Don't Hand-Roll
+## dont-hand-roll
 
 Problems that look simple but have existing solutions:
 
@@ -103,7 +103,7 @@ Problems that look simple but have existing solutions:
 </dont_hand_roll>
 
 <common_pitfalls>
-## Common Pitfalls
+## common-pitfalls
 
 ### Pitfall 1: [Name]
 **What goes wrong:** [description]
@@ -125,7 +125,7 @@ Problems that look simple but have existing solutions:
 </common_pitfalls>
 
 <code_examples>
-## Code Examples
+## code-examples
 
 Verified patterns from official sources:
 
@@ -149,7 +149,7 @@ Verified patterns from official sources:
 </code_examples>
 
 <sota_updates>
-## State of the Art (2024-2025)
+## state-of-the-art
 
 What's changed recently:
 
@@ -166,7 +166,7 @@ What's changed recently:
 </sota_updates>
 
 <open_questions>
-## Open Questions
+## open-questions
 
 Things that couldn't be fully resolved:
 
@@ -182,7 +182,7 @@ Things that couldn't be fully resolved:
 </open_questions>
 
 <sources>
-## Sources
+## sources
 
 ### Primary (HIGH confidence)
 - [Context7 library ID] - [topics fetched]
@@ -196,7 +196,7 @@ Things that couldn't be fully resolved:
 </sources>
 
 <metadata>
-## Metadata
+## metadata
 
 **Research scope:**
 - Core technology: [what]
@@ -223,7 +223,7 @@ Things that couldn't be fully resolved:
 
 ---
 
-## Good Example
+## good-example
 
 ```markdown
 # Phase 3: 3D City Driving - Research
@@ -233,7 +233,7 @@ Things that couldn't be fully resolved:
 **Confidence:** HIGH
 
 <research_summary>
-## Summary
+## summary
 
 Researched the Three.js ecosystem for building a 3D city driving game. The standard approach uses Three.js with React Three Fiber for component architecture, Rapier for physics, and drei for common helpers.
 
@@ -243,7 +243,7 @@ Key finding: Don't hand-roll physics or collision detection. Rapier (via @react-
 </research_summary>
 
 <standard_stack>
-## Standard Stack
+## standard-stack
 
 ### Core
 | Library | Version | Purpose | Why Standard |
@@ -275,7 +275,7 @@ npm install three @react-three/fiber @react-three/drei @react-three/rapier zusta
 </standard_stack>
 
 <architecture_patterns>
-## Architecture Patterns
+## architecture-patterns
 
 ### Recommended Project Structure
 ```
@@ -351,7 +351,7 @@ function Buildings({ positions }) {
 </architecture_patterns>
 
 <dont_hand_roll>
-## Don't Hand-Roll
+## dont-hand-roll
 
 | Problem | Don't Build | Use Instead | Why |
 |---------|-------------|-------------|-----|
@@ -365,7 +365,7 @@ function Buildings({ positions }) {
 </dont_hand_roll>
 
 <common_pitfalls>
-## Common Pitfalls
+## common-pitfalls
 
 ### Pitfall 1: Physics Tunneling
 **What goes wrong:** Fast objects pass through walls
@@ -387,7 +387,7 @@ function Buildings({ positions }) {
 </common_pitfalls>
 
 <code_examples>
-## Code Examples
+## code-examples
 
 ### Basic R3F + Rapier Setup
 ```typescript
@@ -436,7 +436,7 @@ function useVehicleControls(rigidBodyRef) {
 </code_examples>
 
 <sota_updates>
-## State of the Art (2024-2025)
+## state-of-the-art
 
 | Old Approach | Current Approach | When Changed | Impact |
 |--------------|------------------|--------------|--------|
@@ -454,7 +454,7 @@ function useVehicleControls(rigidBodyRef) {
 </sota_updates>
 
 <sources>
-## Sources
+## sources
 
 ### Primary (HIGH confidence)
 - /pmndrs/react-three-fiber - getting started, hooks, performance
@@ -470,7 +470,7 @@ function useVehicleControls(rigidBodyRef) {
 </sources>
 
 <metadata>
-## Metadata
+## metadata
 
 **Research scope:**
 - Core technology: Three.js + React Three Fiber
@@ -497,7 +497,7 @@ function useVehicleControls(rigidBodyRef) {
 
 ---
 
-## Guidelines
+## guidelines
 
 **When to create:**
 - Before planning phases in niche/complex domains

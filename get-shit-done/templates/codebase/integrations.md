@@ -6,7 +6,7 @@ Template for `.planning/codebase/INTEGRATIONS.md` - captures external service de
 
 ---
 
-## File Template
+## file-template
 
 ```markdown
 # External Integrations

@@ -6,7 +6,7 @@ Template for `.planning/codebase/TESTING.md` - captures test framework and patte
 
 ---
 
-## File Template
+## file-template
 
 ```markdown
 # Testing Patterns

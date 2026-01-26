@@ -6,7 +6,7 @@ Template for `.planning/codebase/ARCHITECTURE.md` - captures conceptual code org
 
 ---
 
-## File Template
+## file-template
 
 ```markdown
 # Architecture

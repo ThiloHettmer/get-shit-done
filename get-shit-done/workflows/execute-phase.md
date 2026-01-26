@@ -203,6 +203,12 @@ Execute each wave in sequence. Autonomous plans within a wave run in parallel.
 
    Use Task tool with multiple parallel calls. Each agent gets prompt with inlined content:
 
+   **Context-aware reference loading:** Parse plan frontmatter to determine which references are needed:
+   - `autonomous: false` → include checkpoints.md
+   - `type: tdd` → include tdd.md
+   - Always include: execute-plan.md, summary.md, git-integration.md
+   - Default to safe fallback (include more) if metadata unclear
+
    ```
    <objective>
    Execute plan {plan_number} of phase {phase_number}-{phase_name}.
@@ -212,9 +218,15 @@ Execute each wave in sequence. Autonomous plans within a wave run in parallel.
 
    <execution_context>
    @~/.claude/get-shit-done/workflows/execute-plan.md
-   @~/.claude/get-shit-done/templates/summary.md
+   @~/.claude/get-shit-done/templates/summary.md#file-template
+
+   {if plan.autonomous === false OR plan.autonomous is missing:}
    @~/.claude/get-shit-done/references/checkpoints.md
+   {/if}
+
+   {if plan.type === 'tdd':}
    @~/.claude/get-shit-done/references/tdd.md
+   {/if}
    </execution_context>
 
    <context>

@@ -4,19 +4,19 @@ Template for `.planning/STATE.md` — the project's living memory.
 
 ---
 
-## File Template
+## file-template
 
 ```markdown
 # Project State
 
-## Project Reference
+## project-reference
 
 See: .planning/PROJECT.md (updated [date])
 
 **Core value:** [One-liner from PROJECT.md Core Value section]
 **Current focus:** [Current phase name]
 
-## Current Position
+## current-position
 
 Phase: [X] of [Y] ([Phase name])
 Plan: [A] of [B] in current phase
@@ -25,7 +25,7 @@ Last activity: [YYYY-MM-DD] — [What happened]
 
 Progress: [░░░░░░░░░░] 0%
 
-## Performance Metrics
+## performance-metrics
 
 **Velocity:**
 - Total plans completed: [N]
@@ -44,7 +44,7 @@ Progress: [░░░░░░░░░░] 0%
 
 *Updated after each plan completion*
 
-## Accumulated Context
+## accumulated-context
 
 ### Decisions
 
@@ -60,13 +60,22 @@ Recent decisions affecting current work:
 
 None yet.
 
+### Dependency Graph
+
+*(Optional - for token optimization) Cache phase dependencies to avoid rescanning SUMMARYs:*
+
+```yaml
+"01": {provides: ["auth"], tech: ["jose"]}
+"02": {requires: ["01"], provides: ["dashboard"]}
+```
+
 ### Blockers/Concerns
 
 [Issues that affect future work]
 
 None yet.
 
-## Session Continuity
+## session-continuity
 
 Last session: [YYYY-MM-DD HH:MM]
 Stopped at: [Description of last completed action]

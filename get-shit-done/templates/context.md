@@ -12,7 +12,7 @@ Template for `.planning/phases/XX-name/{phase}-CONTEXT.md` - captures implementa
 
 ---
 
-## File Template
+## file-template
 
 ```markdown
 # Phase [X]: [Name] - Context
@@ -21,14 +21,14 @@ Template for `.planning/phases/XX-name/{phase}-CONTEXT.md` - captures implementa
 **Status:** Ready for planning
 
 <domain>
-## Phase Boundary
+## phase-boundary
 
 [Clear statement of what this phase delivers — the scope anchor. This comes from ROADMAP.md and is fixed. Discussion clarifies implementation within this boundary.]
 
 </domain>
 
 <decisions>
-## Implementation Decisions
+## implementation-decisions
 
 ### [Area 1 that was discussed]
 - [Specific decision made]
@@ -46,7 +46,7 @@ Template for `.planning/phases/XX-name/{phase}-CONTEXT.md` - captures implementa
 </decisions>
 
 <specifics>
-## Specific Ideas
+## specific-ideas
 
 [Any particular references, examples, or "I want it like X" moments from discussion. Product references, specific behaviors, interaction patterns.]
 
@@ -55,7 +55,7 @@ Template for `.planning/phases/XX-name/{phase}-CONTEXT.md` - captures implementa
 </specifics>
 
 <deferred>
-## Deferred Ideas
+## deferred-ideas
 
 [Ideas that came up during discussion but belong in other phases. Captured here so they're not lost, but explicitly out of scope for this phase.]
 
@@ -80,14 +80,14 @@ Template for `.planning/phases/XX-name/{phase}-CONTEXT.md` - captures implementa
 **Status:** Ready for planning
 
 <domain>
-## Phase Boundary
+## phase-boundary
 
 Display posts from followed users in a scrollable feed. Users can view posts and see engagement counts. Creating posts and interactions are separate phases.
 
 </domain>
 
 <decisions>
-## Implementation Decisions
+## implementation-decisions
 
 ### Layout style
 - Card-based layout, not timeline or list
@@ -111,7 +111,7 @@ Display posts from followed users in a scrollable feed. Users can view posts and
 </decisions>
 
 <specifics>
-## Specific Ideas
+## specific-ideas
 
 - "I like how Twitter shows the new posts indicator without disrupting your scroll position"
 - Cards should feel like Linear's issue cards — clean, not cluttered
@@ -119,7 +119,7 @@ Display posts from followed users in a scrollable feed. Users can view posts and
 </specifics>
 
 <deferred>
-## Deferred Ideas
+## deferred-ideas
 
 - Commenting on posts — Phase 5
 - Bookmarking posts — add to backlog
@@ -141,14 +141,14 @@ Display posts from followed users in a scrollable feed. Users can view posts and
 **Status:** Ready for planning
 
 <domain>
-## Phase Boundary
+## phase-boundary
 
 CLI command to backup database to local file or S3. Supports full and incremental backups. Restore command is a separate phase.
 
 </domain>
 
 <decisions>
-## Implementation Decisions
+## implementation-decisions
 
 ### Output format
 - JSON for programmatic use, table format for humans
@@ -173,7 +173,7 @@ CLI command to backup database to local file or S3. Supports full and incrementa
 </decisions>
 
 <specifics>
-## Specific Ideas
+## specific-ideas
 
 - "I want it to feel like pg_dump — familiar to database people"
 - Should work in CI pipelines (exit codes, no interactive prompts)
@@ -181,7 +181,7 @@ CLI command to backup database to local file or S3. Supports full and incrementa
 </specifics>
 
 <deferred>
-## Deferred Ideas
+## deferred-ideas
 
 - Scheduled backups — separate phase
 - Backup rotation/retention — add to backlog
@@ -203,14 +203,14 @@ CLI command to backup database to local file or S3. Supports full and incrementa
 **Status:** Ready for planning
 
 <domain>
-## Phase Boundary
+## phase-boundary
 
 Organize existing photo library into structured folders. Handle duplicates and apply consistent naming. Tagging and search are separate phases.
 
 </domain>
 
 <decisions>
-## Implementation Decisions
+## implementation-decisions
 
 ### Grouping criteria
 - Primary grouping by year, then by month
@@ -235,7 +235,7 @@ Organize existing photo library into structured folders. Handle duplicates and a
 </decisions>
 
 <specifics>
-## Specific Ideas
+## specific-ideas
 
 - "I want to be able to find photos by roughly when they were taken"
 - Don't delete anything — worst case, move to a review folder
@@ -243,7 +243,7 @@ Organize existing photo library into structured folders. Handle duplicates and a
 </specifics>
 
 <deferred>
-## Deferred Ideas
+## deferred-ideas
 
 - Face detection grouping — future phase
 - Cloud sync — out of scope for now

@@ -8,7 +8,7 @@ For deep ecosystem research ("how do experts build this"), use `/gsd:research-ph
 
 ---
 
-## File Template
+## file-template
 
 ```markdown
 ---
@@ -76,16 +76,16 @@ Create `.planning/phases/XX-name/DISCOVERY.md`:
 ```markdown
 # [Topic] Discovery
 
-## Summary
+## summary
 [2-3 paragraph executive summary - what was researched, what was found, what's recommended]
 
-## Primary Recommendation
+## primary-recommendation
 [What to do and why - be specific and actionable]
 
-## Alternatives Considered
+## alternatives-considered
 [What else was evaluated and why not chosen]
 
-## Key Findings
+## key-findings
 
 ### [Category 1]
 - [Finding with source URL and relevance to our case]
@@ -93,10 +93,10 @@ Create `.planning/phases/XX-name/DISCOVERY.md`:
 ### [Category 2]
 - [Finding with source URL and relevance]
 
-## Code Examples
+## code-examples
 [Relevant implementation patterns, if applicable]
 
-## Metadata
+## metadata
 
 <metadata>
 <confidence level="high|medium|low">
