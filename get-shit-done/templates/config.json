@@ -1,5 +1,7 @@
 {
   "mode": "interactive",
+  "agent_type": "gsd-granular",
+  "executor_model": null,
   "depth": "standard",
   "workflow": {
     "research": true,
