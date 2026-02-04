@@ -1,17 +1,18 @@
-# Walkthrough: Meta-Shell V3 (Production Hardened)
+# Walkthrough: Meta-Shell V3.1 (Refined)
 
-I have finalized the **V3 Orchestration Architecture**, addressing all critical operational gaps identified in the review.
+I have finalized the **V3.1 Orchestration Architecture**, polishing the P1 issues identified in the last review.
 
-## Key Improvements (V3)
-- **Atomic Commits**: The [Executor](file:///run/media/thilo/projects/ai/get-shit-done/.docs/draft/skills/executor.md) now enforces per-task git commits, enabling native rollback.
-- **Circuit Breakers**: The [Orchestrator](file:///run/media/thilo/projects/ai/get-shit-done/.docs/draft/orchestrator/orchestrator.md) includes a `gap_count` check to prevent infinite loops.
-- **Robust Host**: The [Host Interface](file:///run/media/thilo/projects/ai/get-shit-done/.docs/draft/architecture/host_interface.md) now defines `timeout_seconds` and atomic `update_state`.
-- **DAG Execution**: The [Planner](file:///run/media/thilo/projects/ai/get-shit-done/.docs/draft/skills/planner.md) outputs strict dependencies, checked by the Orchestrator.
+## Key Refinements (V3.1)
+- **Deadlock Prevention**: [Host Interface](file:///run/media/thilo/projects/ai/get-shit-done/.extraction/draft/v2/architecture/host_interface.md) now enforces `lock_timeout_ms` on state updates.
+- **Resume Protocol**: Explicit `resume_data` schema in `spawn_agent` handles user input forwarding.
+- **Rollback Visibility**: [Orchestrator](file:///run/media/thilo/projects/ai/get-shit-done/.extraction/draft/v2/orchestrator/orchestrator.md) now logs the exact `git revert` commands on failure.
+- **Cleanup Handlers**: [Executor](file:///run/media/thilo/projects/ai/get-shit-done/.extraction/draft/v2/skills/executor.md) now mandates file cleanup on timeout/SIGTERM.
+- **Topology Check**: Orchestrator validates the dependency graph before execution starts.
 
 ## Artifacts
-1.  **Architecture**: `.docs/draft/architecture/host_interface.md`
-2.  **Orchestrator**: `.docs/draft/orchestrator/orchestrator.md`
-3.  **Skills**: `.docs/draft/skills/*.md`
+1.  **Architecture**: `.extraction/draft/v2/architecture/host_interface.md`
+2.  **Orchestrator**: `.extraction/draft/v2/orchestrator/orchestrator.md`
+3.  **Skills**: `.extraction/draft/v2/skills/*.md`
 
 ## Next Steps
-This specification is now ready for implementation in a host language (Python/Node/Go).
+This specification is now fully defined and ready for implementation.
