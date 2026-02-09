@@ -1,0 +1,27 @@
+{
+    "phase_number": "03",
+    "phase_name": "user-profiles",
+    "phase_goal": "Allow users to upload an avatar and update their bio.",
+    "mode": "standard",
+    "roadmap_content": "### Phase 03: User Profiles\nGoal: Basic profile management...",
+    "state_content": "Current milestone: v0.1\nLast phase completed: 02-auth",
+    "requirements_content": "- Support JPG/PNG\n- Max size 5MB\n- SQLite storage",
+    "phase_context": {
+        "decisions": [
+            {"topic": "Image Storage", "choice": "Upload to S3", "rationale": "Easier to scale than local disk"},
+            {"topic": "Form Library", "choice": "React Hook Form", "rationale": "Existing project standard"}
+        ],
+        "deferred_ideas": [
+            {"idea": "Social login linking", "reason": "Focus on core profiles first"}
+        ],
+        "discretion_areas": [
+            {"area": "UI Styling", "guidance": "Use the brand blue for buttons"}
+        ]
+    },
+    "codebase_stack": "Next.js 14, Tailwind CSS, Prisma, PostgreSQL",
+    "codebase_architecture": "Feature-sliced design; components in src/components/profiles",
+    "research_content": "## Avatar Upload Patterns\n- Recommend using 'uploadthing' for S3 integration...\n- Note: resizing should happen client-side...",
+    "relevant_summaries": [
+        "Phase 02 SUMMARY: Implemented JWT auth and User model with `email` and `password` fields."
+    ]
+}
