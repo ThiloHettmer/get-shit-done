@@ -1,16 +1,12 @@
-# Ticket 1: Extract Core GIBD Agents
+# Ticket 1: Implementation of `gibd-runner.ts` Core
 
-**Goal:** Isolate the main agent logic into the prototype directory.
+**Goal:** Create the base TypeScript infrastructure for the "Blackbox Runner" that can load and execute isolated agents.
 
 **Tasks:**
 
-- [ ] Copy `agents/gsd-phase-researcher.md` to `.docs/prototype/agents/gibd-phase-researcher.md`
-- [ ] Copy `agents/gsd-planner.md` to `.docs/prototype/agents/gibd-planner.md`
-- [ ] Copy `agents/gsd-plan-checker.md` to `.docs/prototype/agents/gibd-plan-checker.md`
-- [ ] Copy `agents/gsd-executor.md` to `.docs/prototype/agents/gibd-executor.md`
-- [ ] Copy `agents/gsd-verifier.md` to `.docs/prototype/agents/gibd-verifier.md`
+- [ ] Create `src/orchestration/gibd-runner.ts`.
+- [ ] Implement `Agent` abstract class.
+- [ ] Implement `BlackboxRunner` registry.
+- [ ] Implement basic filesystem shell.
 
-**Acceptance Criteria:**
-
-- All 5 files exist in the destination.
-- Original files are untouched.
+**Ticket Source:** `.docs/planing/phase-2/tickets/ticket-1-runner-core.md`

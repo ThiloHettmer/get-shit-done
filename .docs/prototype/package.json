@@ -1,0 +1,17 @@
+{
+  "name": "gibd-prototype",
+  "version": "1.0.0",
+  "description": "Prototype runner for GIBD agents",
+  "main": "orchestration/gibd-runner.ts",
+  "scripts": {
+    "gibd": "ts-node orchestration/gibd-runner.ts"
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "^0.74.0",
+    "@types/node": "^25.2.2",
+    "dotenv": "^17.2.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "zod": "^4.3.6"
+  }
+}

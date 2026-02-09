@@ -36,7 +36,6 @@
   "engines": {
     "node": ">=16.7.0"
   },
-  "dependencies": {},
   "devDependencies": {
     "esbuild": "^0.24.0"
   },
